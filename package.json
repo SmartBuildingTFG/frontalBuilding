@@ -1,12 +1,13 @@
 {
   "name": "frontal-building",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@types/node": "18.16.2",
@@ -21,5 +22,15 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SmartBuildingTFG/frontalBuilding.git"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "devDependencies": {
+    "semantic-release": "^21.0.1"
   }
 }
