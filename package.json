@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export && touch build/.nojekyll && echo 'building.ruzafa.me' > build/CNAME",
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d build -t true",
     "start": "next start",
     "lint": "next lint",
     "semantic-release": "semantic-release"
