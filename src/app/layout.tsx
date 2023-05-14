@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${inter.className} min-h-screen h-fit bg-center`}>{children}</body>
     </html>
   )
