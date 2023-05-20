@@ -1,4 +1,6 @@
+"use client";
 import { Field } from '@/components/form'
+import { useState } from 'react'
 
 const UserIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -19,6 +21,7 @@ const PasswordIcon = () => (
 )
 
 const Login: React.FC = () => {
+    const [username, setUsername] = useState('')
   return (
     <form className="flex flex-col gap-5">
         <Field
@@ -26,6 +29,8 @@ const Login: React.FC = () => {
             label="Nombre de Usuario"
             placeholder='Nombre de Usuario'
             icon={<UserIcon />}
+            value={username}
+            onChange={setUsername}
             />
         <Field
             id="email"
