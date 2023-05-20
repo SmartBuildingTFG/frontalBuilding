@@ -1,3 +1,12 @@
 #home-background {
   background: url('../../img/background.png');
 }
+
+.glask {
+  background: rgba(208, 208, 208, 0.51);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  border: 1px solid rgba(208, 208, 208, 0.3);
+}
