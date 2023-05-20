@@ -22,30 +22,36 @@ const Login: React.FC = () => {
   return (
     <form className="flex flex-col gap-5">
         <Field
+            id="username"
             label="Nombre de Usuario"
+            placeholder='Nombre de Usuario'
             icon={<UserIcon />}
             />
         <Field
+            id="email"
             label="Correo Electrónico"
+            placeholder='Correo Electrónico'
             icon={<MailIcon />}
             />
         <Field
+            id="password"
+            type="password"
             label="Contraseña"
+            placeholder='Contraseña'
+            icon={<PasswordIcon />}
+            errors={[
+                'Por favor, ingresa una contraseña válida.',
+                'La contraseña debe tener al menos 8 caracteres.'
+            ]}
+            />
+        <Field
+            id="rep_password"
+            type="password"
+            label="Repite la Contraseña"
+            placeholder='Repite la Contraseña'
             icon={<PasswordIcon />}
             />
 
-        <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                Constraseña
-            </label>
-            <input
-                className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="password"
-                type="password"
-                placeholder="******************"
-            />
-            <p className="text-red-500 text-xs italic">Please choose a password.</p>
-        </div>
         <div className="flex items-center justify-between">
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

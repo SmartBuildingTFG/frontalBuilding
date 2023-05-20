@@ -1,13 +1,15 @@
 import { FieldProps } from "./Field.interface"
 
-const Field = ({ label, icon, ...props } : FieldProps) => {
+const Field = ({
+    label, icon, placeholder, type, id, errors, ...props
+} : FieldProps) => {
     return (
         <div className="flex flex-col gap-1">
-            <label className="block" htmlFor="username">
+            <label className="block" htmlFor={id}>
                 {label}
             </label>
             <div className="flex">
-                <span className="
+                {icon && <span className="
                     inline-flex items-center
                     px-3
                     text-gray-900 bg-gray-200
@@ -15,20 +17,27 @@ const Field = ({ label, icon, ...props } : FieldProps) => {
                 ">
                     {icon}
                 </span>
+                }
                 <input
-                    className="
-                        block border rounded-r-lg
+                    className={`
+                        block border rounded-r-lg ${icon || 'rounded-l-lg'}
                         w-full p-2.5
                         bg-gray-50 text-gray-900
-                        border-gray-300
                         focus:outline-none
-                    "
+                        ${errors && errors.length > 0 ? 
+                            'border-red-500'
+                            : 'border-gray-300'}
+                        
+                    `}
                     id="username"
-                    type="text"
-                    placeholder="Usuario"
+                    type={type || "text"}
+                    placeholder={placeholder}
                     {...props}
                 />
             </div>
+            {errors && errors.length > 0 &&
+                errors.map(error => <p className="text-red-500 text-xs italic">{error}</p>)
+            }
         </div>
     )
 }
