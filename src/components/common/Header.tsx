@@ -1,11 +1,13 @@
 const Header = () => <header>
-  <nav className="flex items-center justify-between p-6 lg:px-8 bg-white bg-opacity-70 rounded-b-lg">
-    <img
-      className="h-8 w-auto"
-      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-    </img>
+  <nav className="flex items-center justify-between lg:px-8 bg-white bg-opacity-70 rounded-b-lg">
+    <a href="/home">
+      <img
+        style={{ height: '55px', width: '60px' }}
+        src="favicon.ico" alt="logo">
+      </img>
+    </a>
 
-    <div className="lg:flex lg:gap-x-12">
+    <div className="lg:flex lg:gap-x-12 p-6 lg:px-8">
       <a> Basura </a>
       <a> Infecta </a>
       <a> Recollía </a>
