@@ -8,7 +8,7 @@ const Header = () => <header>
     </a>
 
     <div className="lg:flex lg:gap-x-12 p-6 lg:px-8">
-      <a> Basura </a>
+      <a> Home </a>
       <a> Infecta </a>
       <a> Recollía </a>
     </div>
