@@ -1,6 +1,7 @@
 'use client'
 import { Field } from '@/components/form'
 import React, { useState } from 'react'
+import { IdentityManager } from '@/api'
 
 const UserIcon = (): JSX.Element => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -22,6 +23,8 @@ const PasswordIcon = (): JSX.Element => (
 
 const Login: React.FC = (): JSX.Element => {
   const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   return (
     <form className="flex flex-col gap-5">
         <Field
@@ -37,6 +40,7 @@ const Login: React.FC = (): JSX.Element => {
             label="Correo Electrónico"
             placeholder='Correo Electrónico'
             icon={<MailIcon />}
+            onChange={setEmail}
             />
         <Field
             id="password"
@@ -44,6 +48,7 @@ const Login: React.FC = (): JSX.Element => {
             label="Contraseña"
             placeholder='Contraseña'
             icon={<PasswordIcon />}
+            onChange={setPassword}
             errors={[
               'Por favor, ingresa una contraseña válida.',
               'La contraseña debe tener al menos 8 caracteres.',
@@ -61,7 +66,13 @@ const Login: React.FC = (): JSX.Element => {
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
-            >
+                onClick={() => {
+                  IdentityManager.login(username, password).then((response) => {
+                    window.navigator.vibrate(200)
+                  }).catch((error) => {
+                    console.log(error)
+                  })
+                }}>
                 Sign In
             </button>
             <a
