@@ -1,7 +1,8 @@
-import { Footer, Header } from '@/components/common'
+import { Footer, Header, type LayoutProps } from '@/components/common'
 import './styles.css'
+import React from 'react'
 
-const Layout = ({ children }: { children: React.ReactNode }) => (
+const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps): JSX.Element => (
   <div className="flex flex-col min-h-screen">
     <Header />
     <div id="home-background" className="gap-5 w-full h-full flex flex-col grow">

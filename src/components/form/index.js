@@ -1,4 +1,4 @@
-import Field from './Field';
-import FieldProps from './Field.interface';
+import Field from './Field'
+import FieldProps from './Field.interface'
 
-export { FieldProps, Field };
+export { FieldProps, Field }

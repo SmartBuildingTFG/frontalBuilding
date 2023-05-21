@@ -1,5 +1,6 @@
 import './globals.css'
 import { Roboto } from 'next/font/google'
+import React from 'react'
 
 const inter = Roboto({ subsets: ['latin'], weight: '400' })
 
@@ -12,7 +13,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+}): JSX.Element {
   return (
     <html lang="es">
       <body className={`${inter.className} min-h-screen h-fit`}>{children}</body>

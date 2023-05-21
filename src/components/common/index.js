@@ -1,4 +1,5 @@
-import Footer from './Footer';
-import Header from './Header';
+import Footer from './Footer'
+import Header from './Header'
+import { LayoutProps } from './layout.interface'
 
-export { Footer, Header };
+export { Footer, Header, LayoutProps }
