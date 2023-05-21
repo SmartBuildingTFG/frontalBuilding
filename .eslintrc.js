@@ -25,7 +25,11 @@ module.exports = {
   rules: {
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
-    '@typescript-eslint/space-before-function-paren': ['error', 'never'],
+    '@typescript-eslint/space-before-function-paren': ['error', {
+      asyncArrow: 'always',
+      named: 'never',
+      anonymous: 'never',
+    }],
   },
   settings: {
     react: {
