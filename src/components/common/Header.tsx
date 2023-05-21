@@ -5,8 +5,9 @@ const Header: React.FC = (): JSX.Element => <header>
   <nav className="flex items-center justify-between lg:px-8 bg-white bg-opacity-70 rounded-b-lg">
     <a href="/home">
       <Image
-        style={{ height: '55px', width: '60px' }}
-        src="favicon.ico" alt="logo">
+        height="55"
+        width="60"
+        src="/favicon.ico" alt="logo">
       </Image>
     </a>
 
