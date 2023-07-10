@@ -9,12 +9,6 @@ const UserIcon = (): JSX.Element => (
 </svg>
 )
 
-const MailIcon = (): JSX.Element => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
-</svg>
-)
-
 const PasswordIcon = (): JSX.Element => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
@@ -23,24 +17,16 @@ const PasswordIcon = (): JSX.Element => (
 
 const Login: React.FC = (): JSX.Element => {
   const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   return (
     <form className="flex flex-col gap-5">
         <Field
             id="username"
-            label="Nombre de Usuario"
-            placeholder='Nombre de Usuario'
+            label="Correo electrónico"
+            placeholder='Correo electrónico'
             icon={<UserIcon />}
             value={username}
             onChange={setUsername}
-            />
-        <Field
-            id="email"
-            label="Correo Electrónico"
-            placeholder='Correo Electrónico'
-            icon={<MailIcon />}
-            onChange={setEmail}
             />
         <Field
             id="password"
@@ -49,37 +35,25 @@ const Login: React.FC = (): JSX.Element => {
             placeholder='Contraseña'
             icon={<PasswordIcon />}
             onChange={setPassword}
-            errors={[
-              'Por favor, ingresa una contraseña válida.',
-              'La contraseña debe tener al menos 8 caracteres.',
-            ]}
             />
-        <Field
-            id="rep_password"
-            type="password"
-            label="Repite la Contraseña"
-            placeholder='Repite la Contraseña'
-            icon={<PasswordIcon />}
-            />
-
         <div className="flex items-center justify-between">
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
                 onClick={() => {
                   IdentityManager.login(username, password).then((response) => {
-                    window.navigator.vibrate(200)
+                    console.log(response)
                   }).catch((error) => {
                     console.log(error)
                   })
                 }}>
-                Sign In
+                Inicia Sesión
             </button>
             <a
-                className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-                href="/"
+                className="align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 pl-4"
+                href="http://orion-ld.ruzafa.me/password/request/"
             >
-                Forgot Password?
+                He olvidado mi contraseña
             </a>
         </div>
     </form>
