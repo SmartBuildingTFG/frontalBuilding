@@ -24,6 +24,12 @@ const Header: React.FC = (): JSX.Element => <header>
         >
         Inicia sesión <span aria-hidden="true" >&rarr;</span>
       </a>
+      <a
+        className="text-sm font-semibold leading-6 text-gray-900"
+        href="http://orion-ld.ruzafa.me/"
+      >
+        Registrate <span aria-hidden="true" >&rarr;</span>
+      </a>
     </div>
 
   </nav>
